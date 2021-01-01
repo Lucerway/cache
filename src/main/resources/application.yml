@@ -1,0 +1,36 @@
+jetcache:
+  # 控制台输出统计数据，统计间隔，0表示不统计（单位分钟）
+  statIntervalMinutes: 1
+  # areaName是否作为缓存key前缀
+  areaInCacheName: false
+  # 本地缓存
+  local:
+    default:
+      # 本地缓存类型支持 linkedhashmap、caffeine
+      type: linkedhashmap
+      # key转换器的全局配置，当前只有：fastjson
+      keyConvertor: fastjson
+  # 远程缓存
+  remote:
+    default:
+      # 远程缓存类型支持 tair、redis（tair部分未开源）
+      type: redis
+      keyConvertor: fastjson
+      # 指定远程缓存的序列化方式。可选值为JAVA和KRYO，也可自定义实现序列化方式(my_encode,my_decode)
+      valueEncoder: my_encode
+      valueDecoder: my_decode
+      # redis连接配置
+      poolConfig:
+        minIdle: 5
+        maxIdle: 20
+        maxTotal: 50
+      host: r-bp13667d5d4c0ed4.redis.rds.aliyuncs.com
+      port: 6379
+      password: DkdDHu8Y9li8UU
+      database: 13
+
+
+server:
+  port: 8080
+  tomcat:
+    max-http-form-post-size: 8192
