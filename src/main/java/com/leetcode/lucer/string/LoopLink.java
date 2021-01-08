@@ -1,17 +1,36 @@
 package com.leetcode.lucer.string;
 
 
-import org.w3c.dom.NodeList;
-
 /**
  * 判断链表是否有环
  */
 public class LoopLink {
 
-    public static boolean hasCircle(NodeList list) {
+    public class NodeList {
+        int value;
+        NodeList next;
+
+        public NodeList(int value) {
+            this.value = value;
+        }
+    }
 
 
-        return false;
+    public static boolean hasCircle(NodeList head) {
+        if (head == null || head.next == null) {
+            return false;
+        }
+        NodeList slow = head;
+        NodeList fast = head.next;
+        while (slow != fast) {
+            if (slow == null || fast == null) {
+                return false;
+            }
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+
+        return true;
     }
 
 
