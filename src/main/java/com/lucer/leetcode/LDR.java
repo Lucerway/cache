@@ -1,4 +1,4 @@
-package com.leetcode.lucer.string;
+package com.lucer.leetcode;
 
 /**
  *

@@ -1,4 +1,4 @@
-package com.leetcode.lucer.string;
+package com.lucer.leetcode;
 
 /**
  * 题目描述：一个链表，奇数位升序偶数位降序，让链表变成升序的。
@@ -107,10 +107,10 @@ public class OddIncreaseEvenDecrease {
         }
 
         if (l1.val < l2.val) {
-            l1.next = mergeTwoLists(l1.next, l2);
+            l1.next = mergeTwoList(l1.next, l2);
             return l1;
         } else {
-            l2.next = mergeTwoLists(l1, l2.next);
+            l2.next = mergeTwoList(l1, l2.next);
             return l2;
         }
     }

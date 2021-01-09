@@ -1,5 +1,6 @@
-package com.leetcode.lucer.string;
+package com.lucer.leetcode;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 
 /**
@@ -50,11 +51,6 @@ public class CheckInclusion {
         return new String(chars);
     }
 
-    public static void main(String[] args) {
-
-        System.out.println(checkInclusionV2( "bc", "adcab"));
-
-    }
 
 
     public static boolean checkInclusionV2(String s1, String s2) {
@@ -95,6 +91,12 @@ public class CheckInclusion {
             }
         }
         return true;
+    }
+
+
+    public static void main(String[] args) {
+
+
     }
 
 
