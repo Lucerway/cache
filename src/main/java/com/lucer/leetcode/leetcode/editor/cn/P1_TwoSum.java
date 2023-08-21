@@ -62,10 +62,24 @@ public class P1_TwoSum {
     class Solution {
         public int[] twoSum(int[] nums, int target) {
 
+            if (nums == null || nums.length < 2) {
+                throw new RuntimeException("没有有效结果");
+            }
 
+            if (nums.length == 2 && nums[0] + nums[1] == target) {
+                return new int[]{0, 1};
+            }
 
-            return null;
+            int size = nums.length;
+            for (int i = 0; i < size - 1; i++) {
+                for (int j = i + 1; j < size; j++) {
+                    if (nums[i] + nums[j] == target) {
+                        return new int[]{i, j};
+                    }
+                }
+            }
 
+            throw new RuntimeException("没有有效结果");
         }
     }
 //leetcode submit region end(Prohibit modification and deletion)

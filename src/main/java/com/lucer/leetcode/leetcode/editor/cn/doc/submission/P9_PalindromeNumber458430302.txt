@@ -1,0 +1,40 @@
+
+    /**
+     * 主要思路，把int转化成string，再把string倒叙，对比前后2次的字符串是否相等
+     */
+    class Solution {
+        public boolean isPalindrome(int x) {
+            if (x < 0) {
+                return false;
+            }
+
+            String xStr = Integer.valueOf(x).toString();
+            int size = xStr.length();
+
+            char[] chars = xStr.toCharArray();
+            char[] reverseChars = new char[size];
+
+            for (int i = 0; i < xStr.length(); i++) {
+                reverseChars[i] = chars[size - i - 1];
+            }
+
+            String reverseStr = convertStrByChars(reverseChars);
+            if (reverseStr.equals(xStr)) {
+                return true;
+            }
+
+            return false;
+        }
+
+        private String convertStrByChars(char[] chars) {
+            StringBuilder result = new StringBuilder();
+            for (char a : chars) {
+                result.append(a);
+            }
+            return result.toString();
+        }
+    }
+
+
+//runtime:10 ms
+//memory:41.7 MB
