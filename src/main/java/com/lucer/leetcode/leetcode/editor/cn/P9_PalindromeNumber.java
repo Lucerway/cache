@@ -55,6 +55,7 @@ package com.lucer.leetcode.leetcode.editor.cn;
 public class P9_PalindromeNumber {
     public static void main(String[] args) {
         Solution solution = new P9_PalindromeNumber().new Solution();
+        solution.isPalindrome(121);
 
     }
 
@@ -86,16 +87,17 @@ public class P9_PalindromeNumber {
 
             return false;
         }
-    }
 
-
-    private String convertStrByChars(char[] chars) {
-        StringBuilder result = new StringBuilder();
-        for (char a : chars) {
-            result.append(a);
+        private String convertStrByChars(char[] chars) {
+            StringBuilder result = new StringBuilder();
+            for (char a : chars) {
+                result.append(a);
+            }
+            return result.toString();
         }
-        return result.toString();
     }
+
 //leetcode submit region end(Prohibit modification and deletion)
+
 
 }
