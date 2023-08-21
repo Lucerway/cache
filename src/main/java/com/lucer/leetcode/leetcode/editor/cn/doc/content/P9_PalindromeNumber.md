@@ -43,4 +43,4 @@
 
 <p><strong>进阶：</strong>你能不将整数转为字符串来解决这个问题吗？</p>
 
-<div><div>Related Topics</div><div><li>数学</li></div></div><br><div><li>👍 2639</li><li>👎 0</li></div>
+<div><div>Related Topics</div><div><li>数学</li></div></div><br><div><li>👍 2642</li><li>👎 0</li></div>

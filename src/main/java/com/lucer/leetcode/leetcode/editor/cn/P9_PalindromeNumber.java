@@ -45,7 +45,7 @@ package com.lucer.leetcode.leetcode.editor.cn;
 //
 // 进阶：你能不将整数转为字符串来解决这个问题吗？ 
 //
-// Related Topics 数学 👍 2639 👎 0
+// Related Topics 数学 👍 2642 👎 0
 
 /**
  * 回文数
@@ -56,11 +56,13 @@ public class P9_PalindromeNumber {
     public static void main(String[] args) {
         Solution solution = new P9_PalindromeNumber().new Solution();
 
-        System.out.println(solution.isPalindrome(101));
-
     }
 
     //leetcode submit region begin(Prohibit modification and deletion)
+
+    /**
+     * 主要思路，把int转化成string，再把string倒叙，对比前后2次的字符串是否相等
+     */
     class Solution {
         public boolean isPalindrome(int x) {
             if (x < 0) {
@@ -94,7 +96,6 @@ public class P9_PalindromeNumber {
         }
         return result.toString();
     }
-
 //leetcode submit region end(Prohibit modification and deletion)
 
 }
