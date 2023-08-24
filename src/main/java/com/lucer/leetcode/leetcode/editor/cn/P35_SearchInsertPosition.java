@@ -41,12 +41,12 @@ package com.lucer.leetcode.leetcode.editor.cn;
 // Related Topics 数组 二分查找 👍 2118 👎 0
 
 
-/**
+/*
  * 题目Id：35
  * 题目：搜索插入位置
  * 日期：2023-08-24 10:29:39
  *
- * @author lucer
+ * @author liuchuan
  */
 public class P35_SearchInsertPosition {
     public static void main(String[] args) {

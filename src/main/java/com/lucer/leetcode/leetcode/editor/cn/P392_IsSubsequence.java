@@ -43,12 +43,12 @@ package com.lucer.leetcode.leetcode.editor.cn;
 // Related Topics 双指针 字符串 动态规划 👍 920 👎 0
 
 
-/**
+/*
  * 题目Id：392
  * 题目：判断子序列
  * 日期：2023-08-23 11:02:01
  *
- * @author lucer
+ * @author liuchuan
  */
 public class P392_IsSubsequence {
     public static void main(String[] args) {

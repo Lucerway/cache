@@ -47,10 +47,10 @@ package com.lucer.leetcode.leetcode.editor.cn;
 //
 // Related Topics 数学 👍 2642 👎 0
 
-/**
+/*
  * 回文数
  *
- * @author saint
+ * @author liuchuan
  */
 public class P9_PalindromeNumber {
     public static void main(String[] args) {

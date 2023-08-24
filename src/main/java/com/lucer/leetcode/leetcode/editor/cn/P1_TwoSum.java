@@ -47,10 +47,10 @@ package com.lucer.leetcode.leetcode.editor.cn;
 //
 // Related Topics 数组 哈希表 👍 17512 👎 0
 
-/**
+/*
  * 两数之和
  *
- * @author saint
+ * @author liuchuan
  */
 public class P1_TwoSum {
     public static void main(String[] args) {
