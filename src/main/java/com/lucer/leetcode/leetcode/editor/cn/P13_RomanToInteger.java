@@ -1,8 +1,5 @@
-/**
- * 题目Id：13
- * 题目：罗马数字转整数
- * 日期：2023-08-22 10:36:57
- */
+package com.lucer.leetcode.leetcode.editor.cn;
+
 //罗马数字包含以下七种字符: I， V， X， L，C，D 和 M。 
 //
 // 
@@ -77,22 +74,59 @@
 // 关于罗马数字的详尽书写规则，可以参考 罗马数字 - Mathematics 。 
 // 
 //
-// Related Topics 哈希表 数学 字符串 👍 2484 👎 0
+// Related Topics 哈希表 数学 字符串 👍 2485 👎 0
 
-package com.lucer.leetcode.leetcode.editor.cn;
 
+import java.util.HashMap;
+import java.util.Map;
+
+/**
+ * 题目Id：13
+ * 题目：罗马数字转整数
+ * 日期：2023-08-24 11:44:59
+ *
+ * @author lucer
+ */
 public class P13_RomanToInteger {
     public static void main(String[] args) {
         Solution solution = new P13_RomanToInteger().new Solution();
-        System.out.println("Hello world");
+
     }
 
     //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
         public int romanToInt(String s) {
-            return 0;
+            char[] chars = s.toCharArray();
+            int size = chars.length;
+            Map<String, Integer> romanMap = romanMap();
+
+            int total = 0;
+
+            for (int i = 0; i < size; i++) {
+                Integer a = romanMap.getOrDefault(String.valueOf(chars[i]), 0);
+                if (i < size - 1 && a < romanMap.getOrDefault(String.valueOf(chars[i + 1]), 0)) {
+                    total = total - a;
+                } else {
+                    total = total + a;
+                }
+            }
+
+            return total;
+        }
+
+
+        public Map<String, Integer> romanMap() {
+            Map<String, Integer> map = new HashMap<>();
+            map.put("I", 1);
+            map.put("V", 5);
+            map.put("X", 10);
+            map.put("L", 50);
+            map.put("C", 100);
+            map.put("D", 500);
+            map.put("M", 1000);
+            return map;
         }
     }
 //leetcode submit region end(Prohibit modification and deletion)
 
-} 
+}
