@@ -91,6 +91,8 @@ public class P13_RomanToInteger {
     public static void main(String[] args) {
         Solution solution = new P13_RomanToInteger().new Solution();
 
+        solution.romanToInt("XIIV");
+
     }
 
     //leetcode submit region begin(Prohibit modification and deletion)
