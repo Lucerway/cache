@@ -1,4 +1,4 @@
-package com.lucer.leetcode;
+package com.lucer.historyleet;
 
 /**
  * 题目描述：一个链表，奇数位升序偶数位降序，让链表变成升序的。

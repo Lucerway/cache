@@ -1,4 +1,4 @@
-package com.lucer.leetcode;
+package com.lucer.historyleet;
 
 /**
  * 最长公共前缀

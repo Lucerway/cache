@@ -1,4 +1,4 @@
-package com.lucer.leetcode;
+package com.lucer.historyleet;
 
 import java.util.ArrayList;
 import java.util.Arrays;
