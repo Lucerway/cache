@@ -46,6 +46,9 @@ package com.lucer.leetcode.leetcode.editor.cn;
 // Related Topics 栈 树 深度优先搜索 链表 二叉树 👍 1532 👎 0
 
 
+import java.util.ArrayList;
+import java.util.List;
+
 /*
  * 题目Id：114
  * 题目：二叉树展开为链表
@@ -62,8 +65,8 @@ public class P114_FlattenBinaryTreeToLinkedList {
 
     public class TreeNode {
         int val;
-        P144_BinaryTreePreorderTraversal.TreeNode left;
-        P144_BinaryTreePreorderTraversal.TreeNode right;
+        TreeNode left;
+        TreeNode right;
 
         TreeNode() {
 
@@ -73,7 +76,7 @@ public class P114_FlattenBinaryTreeToLinkedList {
             this.val = val;
         }
 
-        TreeNode(int val, P144_BinaryTreePreorderTraversal.TreeNode left, P144_BinaryTreePreorderTraversal.TreeNode right) {
+        TreeNode(int val, TreeNode left, TreeNode right) {
             this.val = val;
             this.left = left;
             this.right = right;
@@ -99,7 +102,27 @@ public class P114_FlattenBinaryTreeToLinkedList {
      */
     class Solution {
         public void flatten(TreeNode root) {
+            List<TreeNode> list = new ArrayList<>();
+            preorder(root, list);
+            int size = list.size();
+            for (int i = 1; i < size; i++) {
+                TreeNode pre = list.get(i - 1);
+                TreeNode cur = list.get(i);
+                pre.left = null;
+                pre.right = cur;
+            }
+        }
 
+
+        /**
+         * 前序遍历
+         */
+        public void preorder(TreeNode root, List<TreeNode> list) {
+            if (root != null) {
+                list.add(root);
+                preorder(root.left, list);
+                preorder(root.right, list);
+            }
         }
     }
 //leetcode submit region end(Prohibit modification and deletion)
