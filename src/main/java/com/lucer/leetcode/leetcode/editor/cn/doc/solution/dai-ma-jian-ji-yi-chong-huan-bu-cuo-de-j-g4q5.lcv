@@ -1,0 +1,68 @@
+[详细刷题视频合集](https://xiaochen1024.com/series/6196129fc1553b002e57bef5/6196208ec1553b002e57bef6)      [本题视频讲解](https://xiaochen1024.com/video?id=6285e152ede03c002e46b1e3)
+[刷题笔记](https://xiaochen1024.com/courseware/60b4f11ab1aa91002eb53b18)
+
+- 思路：首先判断总油量是否小于总油耗，如果是则肯定不能走一圈。如果否，那肯定能跑一圈。接下来就是循环数组，从第一个站开始，计算每一站剩余的油量，如果油量为负了，就以这个站为起点从新计算。如果到达某一个点为负，说明起点到这个点中间的所有站点都不能到达该点。
+- 复杂度：时间复杂度`O(n)`，空间复杂度`O(1)`
+
+js：
+
+* js
+
+```js
+var canCompleteCircuit = function (gas, cost) {
+    let totalGas = 0;
+    let totalCost = 0;
+    for (let i = 0; i < gas.length; i++) {
+        totalGas += gas[i];
+        totalCost += cost[i];
+    }
+    if (totalGas < totalCost) {//总油量小于总油耗 肯定不能走一圈
+        return -1;
+    }
+
+    let currentGas = 0;
+    let start = 0;
+    for (let i = 0; i < gas.length; i++) {
+        currentGas = currentGas - cost[i] + gas[i];
+        if (currentGas < 0) {//如果到达下一站的时候油量为负数 就以这个站为起点 从新计算
+            currentGas = 0;
+            start = i + 1;
+        }
+    }
+
+    return start;
+};
+```
+
+java：
+
+* java
+
+```java
+class Solution {
+    public int canCompleteCircuit(int[] gas, int[] cost) {
+        int n = gas.length;
+        int sum = 0;
+        for(int i = 0;i < n;i++){
+            sum += gas[i] - cost[i];
+        }
+
+        if(sum < 0){
+            return -1;
+        }
+
+        int currentGas = 0;
+        int start = 0;
+        for(int i = 0;i < n;i++){
+            currentGas += gas[i] - cost[i];
+            if(currentGas < 0){
+                currentGas = 0;
+                start = i + 1;
+            }
+        }
+        return start;
+    }
+}
+
+```
+

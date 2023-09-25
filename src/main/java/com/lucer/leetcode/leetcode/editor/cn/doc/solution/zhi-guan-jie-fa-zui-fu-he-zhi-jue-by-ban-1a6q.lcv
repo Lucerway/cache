@@ -1,0 +1,54 @@
+> Problem: [134. 加油站](https://leetcode.cn/problems/gas-station/description/)
+
+[TOC]
+
+# 思路
+
+【来自于GPT-3.5】
+这是一个典型的加油站环绕问题，可以使用贪心算法来解决。贪心算法的思路是，从某一个加油站开始，尽可能地往后走，同时维护一个当前的油箱剩余汽油量。如果在某个加油站油箱的剩余汽油量小于0，就表示无法从这个加油站出发继续行驶，此时应该选择下一个加油站作为起点重新尝试。
+
+# 解题方法
+
+    初始化两个变量，start 表示起始加油站的索引，total_gas 表示总的汽油剩余量，初始值都为0。
+    从第一个加油站开始遍历加油站，同时维护一个变量 current_gas 表示当前油箱内的汽油量。逐个考虑每个加油站，计算从当前加油站出发，能否绕环路行驶一周。
+    对于每个加油站 i，计算 current_gas += gas[i] - cost[i]，表示从当前加油站出发，到达下一个加油站 i+1 后的剩余汽油量。
+    如果 current_gas 小于0，说明无法从当前加油站出发，将 start 设置为下一个加油站 i+1，同时将 current_gas 重置为0。
+    不断累加 total_gas，表示从起点开始的总汽油剩余量。
+    最终，如果 total_gas 大于等于0，说明可以绕环路行驶一周，返回 start 作为起始加油站的索引，否则返回 -1。
+
+# 复杂度
+
+- 时间复杂度:
+
+> $O(n)$，该算法只包含一个循环，循环遍历每个加油站一次，因此时间复杂度是 O(n)，其中 n 是加油站的数量。
+
+- 空间复杂度:
+
+> $O(1)$，该算法的空间复杂度是 O(1)，因为它只使用了常量额外的空间来存储一些变量，不随输入数据的规模增加而变化。无论输入有多大，算法所使用的额外内存空间都保持不变。
+
+# Code
+
+* []
+
+```C++
+
+class Solution {
+public:
+    int canCompleteCircuit(vector<int>& gas, vector<int>& cost) 
+    {
+        int start = 0, total_gas = 0, current_gas = 0;
+        for (int i = 0; i < gas.size(); ++i)
+        {
+            current_gas += gas[i] - cost[i];
+            total_gas += gas[i] - cost[i];
+            if (current_gas < 0)
+            {
+                start = i + 1;
+                current_gas = 0; 
+            }
+        }
+        return total_gas >=0 ? start : -1;
+    }
+};
+```
+
